@@ -24,7 +24,11 @@ Jos et haluakkaan lisätä esinettä, klikkaa "List items" linkkiä
 
 Esineen voimassa-olon näkee listaus näkymästä, True tarkoittaa sitä, että esineen käyttöikä ei ole vielä päättynyt, ja False tarkoittaa sitä, että pitäsi hankkia uusi vastaava esine.
 
-Voit merkata esineen vanhentuneeksi klikkaamalla "Mark item as eol"-painiketta. 
+Voit merkata esineen vanhentuneeksi klikkaamalla "Mark item as eol"-painiketta.
+
+## Keskeisimmät käyttötapaukset
+
+[Linkki keskeisimpien käyttötapausten kuvauksiin][./documentation/use_cases.txt]
 
 ## Demosovellus herokussa
 
