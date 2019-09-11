@@ -28,7 +28,7 @@ Voit merkata esineen vanhentuneeksi klikkaamalla "Mark item as eol"-painiketta.
 
 ## Keskeisimmät käyttötapaukset
 
-[Linkki keskeisimpien käyttötapausten kuvauksiin][./documentation/use_cases.md]
+[Linkki keskeisimpien käyttötapausten kuvauksiin](./documentation/use_cases.md)
 
 ## Demosovellus herokussa
 
