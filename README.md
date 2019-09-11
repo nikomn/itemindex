@@ -36,5 +36,5 @@ Voit merkata esineen vanhentuneeksi klikkaamalla "Mark item as eol"-painiketta.
 
 ## Tietokantakaavio
 
-[Kuva tietokantataulusta](./documentation/tietokantakaavio.jpg)
+![Kuva tietokantataulusta](./documentation/tietokantakaavio.jpg)
 
