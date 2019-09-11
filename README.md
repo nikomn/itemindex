@@ -10,10 +10,11 @@ Eli sovelluksessa on siis tarkoitus pystyä lisäämään/poistamaan ja listaama
 
 Tietokannasta pitää olla mahdollista hakea erilaisia listauksia esineistä, esim. kaikki esineet, tietyn kategorian esineet vanhentueet esineet yms.
 
-## Tietokantakaavio (alustava luonnos)
+## Demosovellus herokussa
 
-<<<<<<< HEAD
+[https://itemindex-demo.herokuapp.com/](https://itemindex-demo.herokuapp.com/)
+
+## Tietokantakaavio
+
 ![Kuva tietokantataulusta](./documentation/tietokantakaavio.jpg)
-=======
-![Kuva tietokantataulusta](./tietokantakaavio_kuva_v0_1.jpg)
->>>>>>> 7dfdf726802347458ccce0f57d9e6f5315b52db5
+
