@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>Valid</th>
+      <th></th>
+    </tr>
+    {% for item in items %}
+    <tr>
+      <td>{{ item.name }}</td>
+      <td>{{ item.valid }}</td>
+      <td>
+	<form method="POST" action="{{ url_for('items_set_done', item_id=item.id) }}">
+	  <input type="submit" value="Mark item as eol"/>
+	</form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

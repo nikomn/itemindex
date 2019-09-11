@@ -12,4 +12,4 @@ Tietokannasta pitää olla mahdollista hakea erilaisia listauksia esineistä, es
 
 ## Tietokantakaavio (alustava luonnos)
 
-![Kuva tietokantataulusta](./tietokantakaavio_kuva_v0_1.jpg)
+![Kuva tietokantataulusta](./documentation/tietokantakaavio.jpg)
