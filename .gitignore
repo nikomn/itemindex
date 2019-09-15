@@ -1,3 +1,7 @@
+#eric ide projektitiedostot
+*.e4p
+.eric6project
+
 items.db
 
 # Byte-compiled / optimized / DLL files

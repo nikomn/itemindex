@@ -4,16 +4,16 @@
   <table>
     <tr>
       <th>Item</th>
-      <th>Valid</th>
+      <th>Expired</th>
       <th></th>
     </tr>
     {% for item in items %}
     <tr>
       <td>{{ item.name }}</td>
-      <td>{{ item.valid }}</td>
+      <td>{{ item.expired }}</td>
       <td>
 	<form method="POST" action="{{ url_for('items_set_done', item_id=item.id) }}">
-	  <input type="submit" value="Mark item as eol"/>
+	  <input type="submit" value="Mark item as expired"/>
 	</form>
       </td>
     </tr>

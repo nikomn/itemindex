@@ -7,8 +7,8 @@ class Item(db.Model):
     onupdate=db.func.current_timestamp())
 
     name = db.Column(db.String(144), nullable=False)
-    valid = db.Column(db.Boolean, nullable=False)
+    expired = db.Column(db.Boolean, nullable=False)
 
     def __init__(self, name):
         self.name = name
-        self.valid = True
+        self.expired = False

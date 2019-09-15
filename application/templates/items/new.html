@@ -1,8 +1,37 @@
-{% extends "layout.html" %}
+ {% extends "layout.html" %}
 
-{% block body %}
-<form method="POST" action="{{ url_for('items_create') }}">
-  <input type="text" name="name"/>
-  <input type="submit" value="Add a new item"/>
-</form>
-{% endblock %}
+  {% block body %}
+  <form method="POST" action="{{ url_for('items_create') }}">
+    <table>
+      <tr>
+	<td>
+	  {{ form.name.label }}
+	</td>
+	<td>
+	  {{ form.name }}
+	</td>
+	<td>
+	  <ul>
+	    {% for error in form.name.errors %}
+	    <li>{{ error }}</li>
+	    {% endfor %}
+	  </ul>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  {{ form.expired.label }}
+	</td>
+	<td>
+	  {{ form.expired }}
+	</td>
+	<td>
+	</td>
+      </tr>
+      <tr>
+	<td colspan="3">
+	  <input type="submit" value="Add a new task"/>
+	</td>
+      </tr>
+  </form>
+  {% endblock %}
