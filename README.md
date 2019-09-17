@@ -34,7 +34,10 @@ Voit merkata esineen vanhentuneeksi klikkaamalla "Mark item as eol"-painiketta.
 
 [https://itemindex-demo.herokuapp.com/](https://itemindex-demo.herokuapp.com/)
 
+## Työn eteneminen...
+
+[Loki työn etenemisestä ja aikatauluista](./documentation/progress_log.md)
+
 ## Tietokantakaavio
 
 ![Kuva tietokantataulusta](./documentation/tietokantakaavio.jpg)
-
