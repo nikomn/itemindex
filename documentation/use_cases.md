@@ -1,19 +1,33 @@
 # Käyttötapauksia
 
-## Freelancer konsultin työvälineiden hallinnoiminen
+As a < type of user >, I want < some goal > so that < some reason >
 
-Freelancerina työskentelevä konsultti on usein vastuussa omista työvälineistään, ja niiden hallinnointi ilman mitään työvälineetä voi olla hankalaa. Esim. tietokone pitäisi uusia vaikkapa 2 vuoden välein ja muiden laitteiden osalta myös.
+Käyttäjänä haluan lisätä esineitä listalleni, jotta voin hahmottaa kokonaiskuvan siitä, mitä kaikkea omistan.
 
-Itemindex sovelluksen avulla on mahdollista lisätä tietokantaan esine (esim. tietokone) ja määrittää sille käyttöikä. Tämän jälkeen tietokannasta voi aina käydä katsomassa onko jokin esine päässyt vanhentumaan ja mitä ehkä kohtapuolin pitäisi uusia.
+Käyttäjänä haluan poistaa esineitä listaltani, jotta poistetut esineet eivät jää näkyviin ja sekoita kokonaisuuden hahmottamista.
 
-## Reppureissaajan pakkauslista
+Käyttäjänä haluan voida muuttaa niitä esineisiin liittyviä tietoja, joita olen itse syöttänyt järjestelmään, jotta voin itse helposti korjata mahdolliset virheeni.
 
-Reppureissaajan täytyy olla tarkka tavaroistaan. Tavaroiden täytyy olla hyvässä järjestyksessä, eikä niitä saa olla liikaa, mutta ei myöskään mitään oleellista saa puuttua.
+Käyttäjänä haluan merkata esineitä vanhentuneeksi, jotta tiedän, että ne pitäisi uusia
 
-Itemindex sovelluksen avulla reppureissaaja voi hallinnoida reppunsa sisältöä lisäämällä kaikki esineet tietokantaan. Esineille voi lisätä tarvittaessa myös vanhenemispäivän, jonka avulla voi seurata sitä, mitä milloinkin pitäisi hankkia. Sovelluksessa voi myös merkata esineen itse vanhentuneeksi, esim. jos jokin menee rikki ennen aikojaan.
+Käyttäjänä haluan merkata esineitä poistettavaksi, jotta tiedän, mistä aion hankkiutua eroon.
 
-## Kotikokin keittiön varustelun hallinnointi
+Käyttäjänä haluan merkata esineitä hankittavaksi, jotta tiedän, mitä aion hankkia.
 
-Kotikokin on hyvä pitää huolta, siitä, että työvälineitä ja raaka-aineita on riittävästi ja että raaka-aineet eivät ole päässeet vanhenemaan.
+Käyttäjänä haluan pystyä määrittelemään kategorian esineelle, jotta voin hahmottaa esineitä osakokonaisuuksien tasolla.
 
-Itemindex sovelluksen avulla kotikokki voi lisätä kaikki työvälineensä ja raaka-aineet tietokantaan ja hallinnoida niitä sen kautta. Jokaiselle esineelle ja raaka-aineelle voi lisätä vanhenemispäivän ja ne voi myös itse merkata vanhentuneeksi, jos jokin hajoaa tai pilaantuu ennen aikojaan. Tietokannasta näkee, esim. jos jokin raaka-aine on vanhentunut tai jos jotkin aineet ovat vanhentumassa.
+Käyttäjänä haluan pystyä muuttamaan ja poistamaan kategorioita, jotta voin korjata tilanteen mukaan osakokonaisuuksien jäsentelyä.
+
+Käyttäjänä haluan, että jos muutan jonkin kategorian nimeä, se näkyy uudessa muodossa kaikkialla missä sitä on käytetty ja jos poistan kategorian, niin sen pitää vastaavasti poistua samalla kaikkialta, missä sitä on käytetty, jotta voin korjata tilanteen mukaan osakokonaisuuksien jäsentelyä.
+
+Käyttäjänä haluan pystyä määrittelemään tavoite lukumäärän kaikile esineilleni ja sen lisäksi myös kategoriakohtaisen tavoitelukumäärän, jotta voin pitää huolta siitä, että minulle ei kerry liikaa esineitä.
+
+Käyttäjänä haluan pystyä saamaan järjestelmästä helposti esineitä listattuna, jotta voi paremmin hahmottaa eri kokonaisuuksia. Haluan saada ainakin seuraavat listat:
+- Kaikki omistamani esineet
+- Tiettyyn itse määrittämääni kategoriaan tai kategorioihin kuuluvat esineet
+- Kaikki vanhentuneet esineet
+- Kaikki poistettavaksi merkatut esineet
+- Kaikki vanhentuneet esineet
+- Kaikki hankittavat esineet
+
+Käyttäjänä **en halua**, että kukaan muu näkee minun esinelistojani, enkä myöskään halua nähdä listoillani kenenkään muun esineitä, en myöskään halua lisätä esineitä kenenkään muun listalle, tai että kukaan muu voi lisätä esineitä minun listalleni, koska arvostan omaa ja muiden yksityisyyttä.

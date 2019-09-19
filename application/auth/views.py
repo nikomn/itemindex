@@ -1,9 +1,10 @@
+from application import app, db
 from flask import render_template, request, redirect, url_for
 from flask_login import login_user, logout_user
 
 from application import app
 from application.auth.models import User
-from application.auth.forms import LoginForm
+from application.auth.forms import LoginForm, NewUserForm
 
 @app.route("/auth/login", methods = ["GET", "POST"])
 def auth_login():
@@ -26,3 +27,25 @@ def auth_login():
 def auth_logout():
     logout_user()
     return redirect(url_for("index"))
+
+@app.route("/auth/newuser", methods = ["GET", "POST"])
+def auth_newuser():
+    if request.method == "GET":
+        return render_template("auth/newuserform.html", form = NewUserForm())
+
+    form = NewUserForm(request.form)
+    # mahdolliset validoinnit
+
+    user = User.query.filter_by(username=form.username.data, password=form.password.data).first()
+    if user:
+        return render_template("auth/newuserform.html", form = form,
+                                error = "Käyttäjätunnus on jo käytössä, valitse jokin toinen käyttäjätunnus!")
+    else:
+        u = User(form.name.data, form.username.data, form.password.data)
+
+        db.session().add(u)
+        db.session().commit()
+
+        # return "hello world!"
+        login_user(u)
+        return redirect(url_for("index"))

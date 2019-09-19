@@ -2,11 +2,13 @@ from application import app, db
 from flask import redirect, render_template, request, url_for
 from application.items.models import Item
 from application.items.forms import ItemForm
-from flask_login import login_required
+from flask_login import login_required, current_user
 
 @app.route("/items", methods=["GET"])
+@login_required
 def items_index():
-    return render_template("items/list.html", items = Item.query.all())
+    # return render_template("items/list.html", items = Item.query.all())
+    return render_template("items/list.html", items = Item.query.filter_by(id=current_user.id))
 
 @app.route("/items/new/")
 @login_required
@@ -36,6 +38,7 @@ def items_create():
 
     i = Item(form.name.data)
     i.expired = form.expired.data
+    i.account_id = current_user.id
 
     db.session().add(i)
     db.session().commit()
