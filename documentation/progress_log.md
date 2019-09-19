@@ -44,7 +44,7 @@
 - Sovelluksessa on mahdollisuus kirjautumiseen. **VALMIS**
     - Kirjoita testitunnusten kirjautumiseen vaaditut tiedot README.md-tiedostoon. **VALMIS**
 - Sovelluksessa on ainakin kaksi tietokantataulua. **VALMIS**
-- Ainakin yhden tietokantataulun tietoihin liittyy täysi CRUD-toiminnallisuus sovelluksen kautta (yhden rivin luominen, yhden rivin tietojen näyttö, yhden rivin tietojen muokkaus, yhden rivin tietojen poisto, rivien listaus). **TYÖN ALLA**
+- Ainakin yhden tietokantataulun tietoihin liittyy täysi CRUD-toiminnallisuus sovelluksen kautta (yhden rivin luominen, yhden rivin tietojen näyttö, yhden rivin tietojen muokkaus, yhden rivin tietojen poisto, rivien listaus). **ALOITETTU**
 - Githubissa on issuet päällä, jotta koodikatselmointi on mahdollista. **VALMIS**
 - Herokussa käytetään Herokun tarjoamaa PostgreSQL-tietokannanhallintajärjestelmää. **VALMIS**
 
