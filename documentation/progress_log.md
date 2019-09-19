@@ -1,6 +1,6 @@
 # Työn eteneminen...
 
-*Päivitetty 17.9.2019*
+*Päivitetty 19.9.2019*
 
 ## Osan 0 etapit (5.9. Klo 23:59 mennessä)
 - Olet valinnut harjoitustyöllesi aiheen. **VALMIS**
