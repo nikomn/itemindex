@@ -39,15 +39,14 @@
 
 ## Osan 3 etapit (Aloitettu 19.9. Klo 23:59 mennessä, valmis 26.9. Klo 23:59 mennessä)
 
-- Sovelluksessa käytetyt lomakkeet validoivat syötetyn tiedon. **TYÖN ALLA**
-- Sovelluksessa on mahdollisuus rekisteröitymiseen. **TYÖN ALLA**
+- Sovelluksessa käytetyt lomakkeet validoivat syötetyn tiedon. **VALMIS**
+- Sovelluksessa on mahdollisuus rekisteröitymiseen. **VALMIS**
 - Sovelluksessa on mahdollisuus kirjautumiseen. **VALMIS**
-    - Kirjoita testitunnusten kirjautumiseen vaaditut tiedot README.md-tiedostoon. **TYÖN ALLA**
+    - Kirjoita testitunnusten kirjautumiseen vaaditut tiedot README.md-tiedostoon. **VALMIS**
 - Sovelluksessa on ainakin kaksi tietokantataulua. **VALMIS**
 - Ainakin yhden tietokantataulun tietoihin liittyy täysi CRUD-toiminnallisuus sovelluksen kautta (yhden rivin luominen, yhden rivin tietojen näyttö, yhden rivin tietojen muokkaus, yhden rivin tietojen poisto, rivien listaus). **TYÖN ALLA**
-- Githubissa on issuet päällä, jotta koodikatselmointi on mahdollista. **TYÖN ALLA**
-- Commit-viestit ovat yhä järkeviä ja kuvaavat tehtyjä lisäyksiä ja/tai muutoksia. **TYÖN ALLA**
-- Herokussa käytetään Herokun tarjoamaa PostgreSQL-tietokannanhallintajärjestelmää. **TYÖN ALLA**
+- Githubissa on issuet päällä, jotta koodikatselmointi on mahdollista. **VALMIS**
+- Herokussa käytetään Herokun tarjoamaa PostgreSQL-tietokannanhallintajärjestelmää. **VALMIS**
 
 ## Osan 4 etapit (26.9. Klo 23:59 mennessä)
 
