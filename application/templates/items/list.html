@@ -11,10 +11,31 @@
     <tr>
       <td>{{ item.name }}</td>
       <td>{{ item.expired }}</td>
+      <td colspan="3">
+        <form method="POST" action="{{ url_for('items_modify', item_id=item.id) }}">
+          <input type="submit" value="Muokkaa"/>
+        </form>
+        <form method="POST" action="{{ url_for('items_delete', item_id=item.id) }}">
+          <input type="submit" value="Poista esine"/>
+        </form>
+      </td>
+      <!-- <td colspan="3">
+        <form method="POST">
+          <input type="submit" value="Muokkaa"  action="{{ url_for('items_modify', item_id=item.id) }}"/>
+          <input type="submit" value="Poista esine" action="{{ url_for('items_delete', item_id=item.id) }}"/>
+        </form>
+      </td> -->
       <td>
-	<form method="POST" action="{{ url_for('items_set_done', item_id=item.id) }}">
+
+	<!-- <form method="POST" action="{{ url_for('items_set_done', item_id=item.id) }}">
 	  <input type="submit" value="Mark item as expired"/>
+	</form> -->
+  <!-- <form method="POST" action="{{ url_for('items_modify', item_id=item.id) }}">
+	  <input type="submit" value="Muokkaa"/>
 	</form>
+  <form method="POST" action="{{ url_for('items_delete', item_id=item.id) }}"">
+  <input type="submit" value="Poista esine"/ >
+  </form> -->
       </td>
     </tr>
     {% endfor %}

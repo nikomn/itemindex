@@ -43,15 +43,23 @@ Järjestelmää kirjaudutaan aikaisemmin luodulla Käyttäjätunnuksella ja sala
 
 Esineitä voi lisätä klikkaamalla "Add an item"-painiketta
 
-Esineille määritellään nimi ja lisätään se tietokantaan "Lisää uusi esine" painiketta. Tämän jälkeen sovellus listaa käyttäjän kaikki esineet. **Huom: Käyttäjä näkee vain omat esineensä.**
+Esineille määritellään nimi ja lisätään se tietokantaan "Lisää uusi esine" painiketta. Tämän jälkeen sovellus listaa käyttäjän kaikki esineet. **Huom: Käyttäjä näkee vain omat esineensä.** (Tähän liittyä bugi korjattu 22.9.)
 
 Jos et haluakkaan lisätä esinettä, klikkaa "List items" linkkiä
 
-### Esineiden merkkaaminen vanhentuneiksi
+### Esineiden listaaminen
+
+Voit listata esineet list items linkin kautta
 
 Esineen voimassa-olon näkee listaus näkymästä, True tarkoittaa sitä, että esineen käyttöikä ei ole vielä päättynyt, ja False tarkoittaa sitä, että pitäsi hankkia uusi vastaava esine.
 
-Voit merkata esineen vanhentuneeksi klikkaamalla "Mark item as expired"-painiketta.
+### Esineen poistaminen
+
+Voit poistaa esineen klikkaamalla "Poista esine"-painiketta.
+
+### Esineen tietojen muokkaaminen
+
+Pääset muokkaamaan esineen tietoja klikkaamalla "Muokkaa"-painiketta.
 
 ## Keskeisimmät käyttötapaukset
 
