@@ -4,4 +4,20 @@
 <p>
   Itemindex - Esineiden ja tavaralistojen hallinnointiin tarkoitettu sovellus.
 </p>
+
+{% if needs_items is defined %}
+<p>
+  Tietokannassa on seuraavat käyttäjät, joilla ei ole lainkaan esineitä
+</p>
+
+<ul>
+  {% for user in needs_items %}
+  <li>
+    {{user.id}} {{user.name}}
+  </li>
+  {% endfor %}
+</ul>
+
+{% endif %}
+
 {% endblock %}
