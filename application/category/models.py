@@ -1,14 +1,12 @@
 from application import db
 from application.models import Base
 
-class Item(Base):
+class Category(Base):
     name = db.Column(db.String(144), nullable=False)
-    expired = db.Column(db.Boolean, nullable=False)
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'),
-                           nullable=False)
+                            nullable=False)
     item_category_id = db.Column(db.Integer, db.ForeignKey('item_category.id'),
                             nullable=False)
 
     def __init__(self, name):
         self.name = name
-        self.expired = False

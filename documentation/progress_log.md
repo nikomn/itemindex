@@ -50,10 +50,10 @@
 
 ## Osan 4 etapit (26.9. Klo 23:59 mennessä)
 
-- Sovelluksessa on ainakin kolme tietokantataulua, joista jokainen on käytössä. **EI ALOITETTU**
-- Sovelluksessa on ainakin yksi monimutkaisempi yhteenvetokysely, jonka tulokset näytetään käyttäjälle. **EI ALOITETTU**
-- Ulkoasun viilaus. Sovelluksessa käytetään Bootstrap-kirjastoa (tai muuta vastaavaa) ulkoasun tyylittelyssä. **EI ALOITETTU**
-- Toiminnallisuuden täydentäminen. **EI ALOITETTU**
+- Sovelluksessa on ainakin kolme tietokantataulua, joista jokainen on käytössä. **KESKEN**
+- Sovelluksessa on ainakin yksi monimutkaisempi yhteenvetokysely, jonka tulokset näytetään käyttäjälle. **OSITTAIN VALMIS - ODOTTAA TIETOKANTATAULUJEN KORJAAMISTA**
+- Ulkoasun viilaus. Sovelluksessa käytetään Bootstrap-kirjastoa (tai muuta vastaavaa) ulkoasun tyylittelyssä. **VALIS**
+- Toiminnallisuuden täydentäminen. **TYÖN ALLA**
 
 ## Osan 5 etapit (aloitettu 3.10. Klo 23:59 mennessä, valmis 10.10 Klo 23:59 mennessä)
 

@@ -2,6 +2,9 @@
 
 # Aineopintojen harjoitustyö: Tietokantasovellus
 
+## Huom: 26.9. päivityksen ongelmista
+26.9. tehtyjen muokkausten seurauksena uusien tietokantataulujen luomisessa ilmenee virhe, jonka seurauksena sovellus ei toimi tällä hetkellä. Esineiden lisääminen ei onnistu. Vikaa selvitellään ja se korjataan lähipäivinä.
+
 ## Kuvaus sovelluksen toiminnallisuudesta:
 
 Tehtävänä on luoda tietokantasovellus, jonka avulla käyttäjä voi hallinnoida hallussaan olevia esineitä.
@@ -21,7 +24,6 @@ Tarkoituksena on, että valmis sovellus sisältää seuraavat ominaisuudet:
   - Kaikki hankittavat esineet
 
 Lisää kuvauksia toiminnallisuuksista löytyy myös [käyttötapauskuvauksista](./documentation/use_cases.md)
-
 
 ## Käyttöohje
 

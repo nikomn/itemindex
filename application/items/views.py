@@ -80,6 +80,7 @@ def items_create():
         return render_template("items/new.html", form = form)
 
     i = Item(form.name.data)
+    i.category = form.category.data
     i.expired = form.expired.data
     i.account_id = current_user.id
 

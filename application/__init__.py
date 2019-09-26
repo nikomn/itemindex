@@ -25,6 +25,10 @@ from application.items import views
 from application.auth import models
 from application.auth import views
 
+from application.category import models
+
+from application.item_category import models
+
 # kirjautuminen
 from application.auth.models import User
 from os import urandom
