@@ -6,8 +6,6 @@ class Item(Base):
     expired = db.Column(db.Boolean, nullable=False)
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'),
                            nullable=False)
-    item_category_id = db.Column(db.Integer, db.ForeignKey('item_category.id'),
-                            nullable=False)
 
     def __init__(self, name):
         self.name = name

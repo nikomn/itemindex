@@ -16,10 +16,16 @@
 <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('items_index') }} ">List items</a>
+            <a class="nav-link" href="{{ url_for('items_index') }} ">Näytä esineet</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('items_form') }} ">Add a item</a>
+            <a class="nav-link" href="{{ url_for('items_form') }} ">Lisää esine</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('categories_index') }} ">Näytä kategoriat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('categories_form') }} ">Lisää kategoria</a>
           </li>
         </ul>
         <div class="form-inline mt-2 mt-md-0">

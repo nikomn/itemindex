@@ -28,7 +28,7 @@ def items_set_done(item_id):
 
 # @app.route("/items/<item_id>/modify", methods=["POST"])
 @app.route("/items/<item_id>/modify", methods=["POST"])
-# @login_required
+@login_required
 def items_modify(item_id):
     # return render_template("items/list.html", items = Item.query.all())
     # , form = ItemForm()
@@ -80,7 +80,6 @@ def items_create():
         return render_template("items/new.html", form = form)
 
     i = Item(form.name.data)
-    i.category = form.category.data
     i.expired = form.expired.data
     i.account_id = current_user.id
 

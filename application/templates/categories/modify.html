@@ -1,14 +1,15 @@
 {% extends "layout.html" %}
 
  {% block body %}
- <form method="POST" action="{{ url_for('items_create') }}">
+   <form method="POST" action="{{ url_for('categories_modify', category_id=category.id) }}">
+ <!-- <form method="POST"> -->
    <table>
      <tr>
  <td>
    {{ form.name.label }}
  </td>
  <td>
-   {{ form.name }}
+   {{ form.name(value=category.name) }}
  </td>
  <td>
    <ul>
@@ -20,17 +21,12 @@
      </tr>
      <tr>
  <td>
-   {{ form.expired.label }}
- </td>
- <td>
-   {{ form.expired }}
- </td>
- <td>
  </td>
      </tr>
      <tr>
  <td colspan="3">
-   <input type="submit" value="Lisää uusi esine"/>
+   <!-- <input type="submit" value="Tallenna muutokset" action="{{ url_for('categories_modify', category_id=category.id) }}"/ > -->
+   <input type="submit" value="Tallenna muutokset"/ >
  </td>
      </tr>
  </form>
