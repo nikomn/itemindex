@@ -5,6 +5,11 @@
 ## Huom: 26.9. päivityksen ongelmista
 26.9. tehtyjen muokkausten seurauksena uusien tietokantataulujen luomisessa ilmenee virhe, jonka seurauksena sovellus ei toimi tällä hetkellä. Esineiden lisääminen ei onnistu. Vikaa selvitellään ja se korjataan lähipäivinä.
 
+### Update 29.9.
+Ongelmia herokun toiminnassa edelleen.
+
+Katgorioita voi lisätä, muokata ja poistaa, mutta tällä hetkellä niiden linkittäminen esineisiin ei toimi.
+
 ## Kuvaus sovelluksen toiminnallisuudesta:
 
 Tehtävänä on luoda tietokantasovellus, jonka avulla käyttäjä voi hallinnoida hallussaan olevia esineitä.
