@@ -1,6 +1,7 @@
 from application import app, db
 from flask import redirect, render_template, request, url_for
 from application.items.models import Item
+from application.categories.models import Category
 from application.items.forms import ItemForm, ModifyItemForm
 from flask_login import login_required, current_user
 
@@ -14,7 +15,10 @@ def items_index():
 @login_required
 def items_form():
     # return render_template("items/new.html")
-    return render_template("items/new.html", form = ItemForm())
+    # return render_template("items/new.html", form = ItemForm())
+    form = ItemForm()
+    form.item_category.choices = [(c.id, c.name) for c in Category.query.order_by('name')]
+    return render_template('items/new.html', form=form)
 
 @app.route("/items/<item_id>/", methods=["POST"])
 @login_required
@@ -76,10 +80,12 @@ def items_create():
 
     form = ItemForm(request.form)
 
-    if not form.validate():
-        return render_template("items/new.html", form = form)
+    # if not form.validate():
+    #     return render_template("items/new.html", form = form)
+
 
     i = Item(form.name.data)
+    i.item_category = [ Category.query.get(form.item_category.data) ]
     i.expired = form.expired.data
     i.account_id = current_user.id
 

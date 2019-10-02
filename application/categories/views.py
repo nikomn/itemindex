@@ -27,6 +27,7 @@ def categories_create():
         return render_template("categories/new.html", form = form)
 
     c = Category(form.name.data)
+    # c.item_category
     c.account_id = current_user.id
 
     db.session().add(c)

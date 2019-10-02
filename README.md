@@ -10,6 +10,9 @@ Ongelmia herokun toiminnassa edelleen.
 
 Katgorioita voi lisätä, muokata ja poistaa, mutta tällä hetkellä niiden linkittäminen esineisiin ei toimi.
 
+### Update 2.10.
+Uusin muokkaus rikkoo jälleen sovelluksen toiminnan. Tietokantataulujen keskinäiset suhteet eivät tällä hetkellä toimi oikein. Vika pyritään korjaamaan huomenna.
+
 ## Kuvaus sovelluksen toiminnallisuudesta:
 
 Tehtävänä on luoda tietokantasovellus, jonka avulla käyttäjä voi hallinnoida hallussaan olevia esineitä.
