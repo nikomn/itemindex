@@ -2,16 +2,9 @@
 
 # Aineopintojen harjoitustyö: Tietokantasovellus
 
-## Huom: 26.9. päivityksen ongelmista
-26.9. tehtyjen muokkausten seurauksena uusien tietokantataulujen luomisessa ilmenee virhe, jonka seurauksena sovellus ei toimi tällä hetkellä. Esineiden lisääminen ei onnistu. Vikaa selvitellään ja se korjataan lähipäivinä.
+## 3.10. Päivitys
+3.10. päivityksen jälkeen esineiden ja kategorioiden lisääminen toimii vihdoin (ainakin joten kuten). Pyrin kirimään viikonlopun aikana kiinni menetettyä aikaa, joka tämän ongelman ratkomisessa on valitettavasti mennyt.
 
-### Update 29.9.
-Ongelmia herokun toiminnassa edelleen.
-
-Katgorioita voi lisätä, muokata ja poistaa, mutta tällä hetkellä niiden linkittäminen esineisiin ei toimi.
-
-### Update 2.10.
-Uusin muokkaus rikkoo jälleen sovelluksen toiminnan. Tietokantataulujen keskinäiset suhteet eivät tällä hetkellä toimi oikein. Vika pyritään korjaamaan huomenna.
 
 ## Kuvaus sovelluksen toiminnallisuudesta:
 
