@@ -9,7 +9,7 @@ from flask_login import login_required, current_user
 @login_required
 def items_index():
     # return render_template("items/list.html", items = Item.query.all())
-    return render_template("items/list.html", items = Item.query.filter_by(account_id=current_user.id))
+    return render_template("items/list.html", items = Item.query.filter_by(account_id=current_user.id), categories = Category.query.filter_by(account_id=current_user.id))
 
 @app.route("/items/new/")
 @login_required
@@ -30,28 +30,29 @@ def items_set_done(item_id):
 
     return redirect(url_for("items_index"))
 
-# @app.route("/items/<item_id>/modify", methods=["POST"])
 @app.route("/items/<item_id>/modify", methods=["POST"])
 @login_required
 def items_modify(item_id):
-    # return render_template("items/list.html", items = Item.query.all())
-    # , form = ItemForm()
     item = Item.query.get(item_id)
-    # Item.query.
-    # form = ModifyItemForm()
+    category = Category.query.get(item.item_category)
+
     form = ItemForm()
-    # form.name.value = item.name
-    # form.expired.value = item.expired
-    # form = ModifyItemForm()
+    form.item_category.choices = [(c.id, c.name) for c in Category.query.order_by('name')]
+    form.item_category.data = category.id
+
+
     if not form.validate():
-        # return render_template("items/modify.html", form = form, item = Item.query.get(item_id))
         return render_template("items/modify.html", form = form, item = item)
     # return render_template("items/modify.html", form = form, item = Item.query.get(item_id))
 
     # i = Item(form.name.data)
     item.name = form.name.data
+    item.item_category = form.item_category.data
     item.expired = form.expired.data
     # item.account_id = current_user.id
+    # i.item_category = form.item_category.data
+    # i.expired = form.expired.data
+    # i.account_id = current_user.id
 
     # db.session().add(i)
     db.session().commit()
@@ -76,7 +77,6 @@ def items_delete(item_id):
 @app.route("/items/", methods=["POST"])
 @login_required
 def items_create():
-    # t = Item(request.form.get("name"))
 
     form = ItemForm(request.form)
 
@@ -85,7 +85,7 @@ def items_create():
 
 
     i = Item(form.name.data)
-    i.item_category = [ Category.query.get(form.item_category.data) ]
+    i.item_category = form.item_category.data
     i.expired = form.expired.data
     i.account_id = current_user.id
 

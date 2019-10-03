@@ -48,9 +48,9 @@ def categories_modify(category_id):
     # form.name.value = item.name
     # form.expired.value = item.expired
     # form = ModifyItemForm()
-    if not form.validate():
+    #if not form.validate():
         # return render_template("items/modify.html", form = form, item = Item.query.get(item_id))
-        return render_template("categories/modify.html", form = form, category = category)
+    return render_template("categories/modify.html", form = form, category = category)
     # return render_template("items/modify.html", form = form, item = Item.query.get(item_id))
 
     # i = Item(form.name.data)

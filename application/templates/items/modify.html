@@ -2,7 +2,6 @@
 
  {% block body %}
  <form method="POST" action="{{ url_for('items_modify', item_id=item.id) }}">
- <!-- <form method="POST"> -->
    <table>
      <tr>
  <td>
@@ -20,6 +19,14 @@
  </td>
      </tr>
      <tr>
+       <td>
+          {{ form.item_category.label }}
+        </td>
+        <td>
+          {{ form.item_category }}
+        </td>
+       </tr>
+     <tr>
  <td>
    {{ form.expired.label }}
  </td>
@@ -30,10 +37,10 @@
  </td>
      </tr>
      <tr>
- <td colspan="3">
-   <!-- <input type="submit" value="Tallenna muutokset" action="{{ url_for('items_modify', item_id=item.id) }}"/ > -->
-   <input type="submit" value="Tallenna muutokset"/ >
- </td>
+       <td colspan="3">
+         <!-- <input type="submit" value="Tallenna muutokset" action="{{ url_for('items_modify', item_id=item.id) }}"/ > -->
+         <input type="submit" value="Tallenna muutokset"/ >
+       </td>
      </tr>
  </form>
  {% endblock %}

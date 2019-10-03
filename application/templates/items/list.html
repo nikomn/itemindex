@@ -3,13 +3,19 @@
 {% block body %}
   <table>
     <tr>
-      <th>Item</th>
-      <th>Expired</th>
-      <th></th>
+      <th>Esine</th>
+      <th>Kategoria</th>
+      <th>Vanhentunut</th>
     </tr>
     {% for item in items %}
     <tr>
       <td>{{ item.name }}</td>
+      <!-- <td>{{ item.item_category }}</td> -->
+      {% for category in categories %}
+        {% if category.id == item.item_category %}
+        <td>{{ category.name }}</td>
+        {% endif %}
+      {% endfor %}
       <td>{{ item.expired }}</td>
       <td colspan="3">
         <form method="POST" action="{{ url_for('items_modify', item_id=item.id) }}">
