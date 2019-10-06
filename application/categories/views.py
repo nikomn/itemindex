@@ -20,21 +20,26 @@ def categories_form():
 @login_required
 def categories_create():
     # t = Item(request.form.get("name"))
-
     form = CategoryForm(request.form)
+    c_test = Category.query.filter_by(name=form.name.data, account_id=current_user.id).first()
+    if c_test:
+        return render_template("categories/new.html", form = form,
+                                error = "Kategoria on jo olemassa, valitse jokin toinen nimi kategorialle!")
+    else:
 
-    if not form.validate():
-        return render_template("categories/new.html", form = form)
 
-    c = Category(form.name.data)
-    # c.item_category
-    c.account_id = current_user.id
+        if not form.validate():
+            return render_template("categories/new.html", form = form)
 
-    db.session().add(c)
-    db.session().commit()
+        c = Category(form.name.data)
+        # c.item_category
+        c.account_id = current_user.id
 
-    # return "hello world!"
-    return redirect(url_for("categories_index"))
+        db.session().add(c)
+        db.session().commit()
+
+        # return "hello world!"
+        return redirect(url_for("categories_index"))
 
 @app.route("/categories/<category_id>/modify", methods=["POST"])
 @login_required

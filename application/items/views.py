@@ -16,9 +16,31 @@ def items_index():
 def items_form():
     # return render_template("items/new.html")
     # return render_template("items/new.html", form = ItemForm())
+    category_list = Category.query.order_by('name').filter_by(account_id=current_user.id)
+    c_list = []
+    for c in category_list:
+        c_list.append(c)
+
+    if len(c_list) == 0:
+        c = Category("Ei kategoriaa")
+        # c.account_id = self.id
+        c.account_id = current_user.id
+        db.session().add(c)
+        db.session().commit()
+
     form = ItemForm()
-    form.item_category.choices = [(c.id, c.name) for c in Category.query.order_by('name')]
+
+    form.item_category.choices = [(c.id, c.name) for c in Category.query.order_by('name').filter_by(account_id=current_user.id)]
     return render_template('items/new.html', form=form)
+    # if request.method == "POST" and not form.validate():
+    #     return render_template('items/new.html', form=form)
+    # # return render_template("items/modify.html", form = form, item = item)
+    # elif request.method == "GET":
+    #     return render_template('items/new.html', form=form)
+    # if not form.validate_on_submit():
+    #     return render_template('items/new.html', form=form)
+    #elif not form.validate() and request.method == "POST":
+        #return render_template('items/new.html', form=form)
 
 @app.route("/items/<item_id>/", methods=["POST"])
 @login_required
@@ -37,11 +59,11 @@ def items_modify(item_id):
     category = Category.query.get(item.item_category)
 
     form = ItemForm()
-    form.item_category.choices = [(c.id, c.name) for c in Category.query.order_by('name')]
+    form.item_category.choices = [(c.id, c.name) for c in Category.query.order_by('name').filter_by(account_id=current_user.id)]
     form.item_category.data = category.id
 
 
-    if not form.validate():
+    if not form.validate_on_submit():
         return render_template("items/modify.html", form = form, item = item)
     # return render_template("items/modify.html", form = form, item = Item.query.get(item_id))
 
@@ -79,9 +101,11 @@ def items_delete(item_id):
 def items_create():
 
     form = ItemForm(request.form)
+    form.item_category.choices = [(c.id, c.name) for c in Category.query.order_by('name').filter_by(account_id=current_user.id)]
 
-    # if not form.validate():
-    #     return render_template("items/new.html", form = form)
+
+    if not form.validate():
+        return render_template("items/new.html", form = form)
 
 
     i = Item(form.name.data)

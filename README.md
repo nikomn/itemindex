@@ -2,8 +2,18 @@
 
 # Aineopintojen harjoitustyö: Tietokantasovellus
 
-## 3.10. Päivitys
-3.10. päivityksen jälkeen esineiden ja kategorioiden lisääminen toimii vihdoin (ainakin joten kuten). Pyrin kirimään viikonlopun aikana kiinni menetettyä aikaa, joka tämän ongelman ratkomisessa on valitettavasti mennyt.
+## TODO 10.10. mennessä...
+
+Tavoitteena olisi saada sovellukseen *ainakin* seuraavat toiminnallisuudet 10.10. mennessä:
+
+- Oletuskategoria jokaiselle uudelle käyttäjälle
+    - Nykyisessä toteutuksessa täytyy itse luoda vähintään yksi kategoria, ennen kuin esineitä voi lisätä, mikä on hieman hankalaa.
+- Kaikkien syötteiden validoinnit ja virheilmoitukset
+- Kateorian poistaminen estetään, jos kategoriaa on käytetty jossain esineessä.
+- SQL kyselyitä:
+    - Listaa esineet kategorian mukaan
+    - Listaa vanhentuneet esineet
+    - Listaa ei-vanhentuneet esineet
 
 
 ## Kuvaus sovelluksen toiminnallisuudesta:
