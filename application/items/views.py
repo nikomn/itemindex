@@ -2,6 +2,7 @@ from application import app, db
 from flask import redirect, render_template, request, url_for
 from application.items.models import Item
 from application.categories.models import Category
+from application.item_category.models import ItemCategory
 from application.items.forms import ItemForm, ModifyItemForm
 from flask_login import login_required, current_user
 
@@ -115,6 +116,8 @@ def items_create():
 
     db.session().add(i)
     db.session().commit()
+
+
 
     # return "hello world!"
     return redirect(url_for("items_index"))

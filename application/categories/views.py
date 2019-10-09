@@ -2,6 +2,7 @@ from application import app, db
 from flask import redirect, render_template, request, url_for
 from application.categories.models import Category
 from application.categories.forms import CategoryForm
+from application.items.models import Item
 from flask_login import login_required, current_user
 
 @app.route("/categories", methods=["GET"])
@@ -44,18 +45,14 @@ def categories_create():
 @app.route("/categories/<category_id>/modify", methods=["POST"])
 @login_required
 def categories_modify(category_id):
-    # return render_template("items/list.html", items = Item.query.all())
-    # , form = ItemForm()
     category = Category.query.get(category_id)
-    # Item.query.
-    # form = ModifyItemForm()
     form = CategoryForm()
     # form.name.value = item.name
     # form.expired.value = item.expired
     # form = ModifyItemForm()
-    #if not form.validate():
+    if not form.validate():
         # return render_template("items/modify.html", form = form, item = Item.query.get(item_id))
-    return render_template("categories/modify.html", form = form, category = category)
+        return render_template("categories/modify.html", form = form, category = category)
     # return render_template("items/modify.html", form = form, item = Item.query.get(item_id))
 
     # i = Item(form.name.data)
@@ -69,11 +66,21 @@ def categories_modify(category_id):
     return redirect(url_for("categories_index"))
 
 @app.route("/categories/<category_id>/delete", methods=["POST"])
-# @login_required
+@login_required
 def categories_delete(category_id):
-    category = Category.query.get(category_id)
-    db.session().delete(category)
-    db.session().commit()
-
-    # return "hello world!"
-    return redirect(url_for("categories_index"))
+    items = Item.query.filter_by(item_category=category_id)
+    i_tmp = []
+    for i in items:
+        i_tmp.append(i)
+    if len(i_tmp) == 0:
+        category = Category.query.get(category_id)
+        db.session().delete(category)
+        db.session().commit()
+        return redirect(url_for("categories_index"))
+    else:
+        #print("Virhe! Kategoria on käytössä!")
+        #print("Esineet, joissa kategoriaa käytetään:")
+        #for c in i_tmp:
+        #    print(c)
+        # return redirect(url_for("categories_index"))
+        return render_template("categories/list.html", categories = Category.query.filter_by(account_id=current_user.id), error="Kategoria on käytössä! Poista ensin kategoria esineistä, joissa sitä on käytetty!")
