@@ -44,18 +44,28 @@ Lisää kuvauksia toiminnallisuuksista löytyy myös [käyttötapauskuvauksista]
 
 ## Asennusohje
 
-1. Lataa projekti koneellesi komennolla:  
-        git clone https://github.com/nikomn/itemindex.git
+1. Lataa projekti koneellesi komennolla:
+```
+git clone https://github.com/nikomn/itemindex.git
+```
 2. Siirry projektin kansioon  
-        cd itemindex  
+```
+cd itemindex  
+```
 2. Luo ja aktivoi virtuaaliympäristö  
-        virtualenv venv
-        source venv/bin/activate
+```
+virtualenv venv  
+source venv/bin/activate
+```
 3. Päivitä pip ja asenna riippuvuudet  
-        pip install --upgrade pip
-        pip install -r requirements.txt
+```
+pip install --upgrade pip  
+pip install -r requirements.txt
+```
 4. Käynnistä sovellus  
-        python3 start.py
+```
+python3 start.py
+``` 
 
 Sovellus näkyy tämän jälkeen esim. Firefoxilla osoitteessa http://127.0.0.1:5000/
 
