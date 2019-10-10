@@ -3,7 +3,7 @@ from flask import redirect, render_template, request, url_for
 from application.items.models import Item
 from application.categories.models import Category
 from application.item_category.models import ItemCategory
-from application.items.forms import ItemForm, ModifyItemForm
+from application.items.forms import ItemForm, ModifyItemForm, ItemSearchForm
 from flask_login import login_required, current_user
 
 @app.route("/items", methods=["GET"])
@@ -11,6 +11,21 @@ from flask_login import login_required, current_user
 def items_index():
     # return render_template("items/list.html", items = Item.query.all())
     return render_template("items/list.html", items = Item.query.filter_by(account_id=current_user.id), categories = Category.query.filter_by(account_id=current_user.id))
+
+@app.route("/items/search/")
+@login_required
+def items_search():
+    form = ItemSearchForm()
+    form.item_category.choices = [(c.id, c.name) for c in Category.query.order_by('name').filter_by(account_id=current_user.id)]
+    return render_template('items/search.html', form=form)
+
+@app.route("/items/search/results", methods=["GET", "POST"])
+@login_required
+# def items_show_results(category_id):
+def items_show_results():
+    # return render_template("items/list.html", items = Item.query.filter_by(account_id=current_user.id), categories = Category.query.filter_by(account_id=current_user.id).filter_by(id=category_id))
+    return render_template("items/list.html", items = Item.query.filter_by(account_id=current_user.id), categories = Category.query.filter_by(account_id=current_user.id))
+
 
 @app.route("/items/new/")
 @login_required

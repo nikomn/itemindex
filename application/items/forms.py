@@ -17,3 +17,9 @@ class ModifyItemForm(FlaskForm):
 
     class Meta:
         csrf = False
+
+class ItemSearchForm(FlaskForm):
+    item_category = SelectField('Kategoria', [validators.input_required()], coerce=int)  # message="Virhe! Valitse jokin kategoria!"
+
+    class Meta:
+        csrf = False
