@@ -18,29 +18,31 @@ Tavoitteena olisi saada sovellukseen *ainakin* seuraavat toiminnallisuudet 10.10
 - Kateorian poistaminen estetään, jos kategoriaa on käytetty jossain esineessä. **VALMIS**
 - SQL kyselyitä **Valmis, mutta ei toimi ihan oikein**:
     - Listaa esineet kategorian mukaan   
-    esim.
 
-        ```
-    SELECT Item.name FROM item
-    LEFT JOIN Account ON Item.account_id=Account.id
-    LEFT JOIN Category ON Category.account_id=Account.id
-    WHERE Category.id = 3;
-        ```
+  ```
+  SELECT Item.name FROM item  
+  LEFT JOIN Account ON   Item.account_id=Account.id  
+  LEFT JOIN Category ON   Category.account_id=Account.id  
+  WHERE Category.id = 3;
+  ```
+
     - Listaa vanhentuneet esineet  
-    esim.
-    ```
-SELECT Item.name FROM item
-LEFT JOIN Account ON Item.account_id=Account.id
-LEFT JOIN Category ON Category.account_id=Account.id
-WHERE Item.expired = True;
-    ```    
+
+  ```
+  SELECT Item.name FROM item
+  LEFT JOIN Account ON Item.account_id=Account.id
+  LEFT JOIN Category ON Category.account_id=Account.id
+  WHERE Item.expired = True;
+  ```  
+
     - Listaa ei-vanhentuneet esineet
-    ```
-SELECT Item.name FROM item
-LEFT JOIN Account ON Item.account_id=Account.id
-LEFT JOIN Category ON Category.account_id=Account.id
-WHERE Item.expired = False;
-    ```
+
+  ```
+  SELECT Item.name FROM item
+  LEFT JOIN Account ON Item.account_id=Account.id
+  LEFT JOIN Category ON Category.account_id=Account.id
+  WHERE Item.expired = False;
+  ```
 
 
 ## Kuvaus sovelluksen toiminnallisuudesta:
