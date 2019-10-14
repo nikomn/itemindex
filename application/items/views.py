@@ -76,7 +76,8 @@ def items_modify(item_id):
 
     form = ItemForm()
     form.item_category.choices = [(c.id, c.name) for c in Category.query.order_by('name').filter_by(account_id=current_user.id)]
-    form.item_category.data = category.id
+    # form.item_category.data = category.id
+    # form.expired.data = item.expired
 
 
     if not form.validate_on_submit():
@@ -85,8 +86,13 @@ def items_modify(item_id):
 
     # i = Item(form.name.data)
     item.name = form.name.data
-    item.item_category = form.item_category.data
-    item.expired = form.expired.data
+    item.item_category = int(form.item_category.data)
+    if form.expired.data:
+        # item.expired = form.expired.data
+        item.expired = True
+    else:
+        item.expired = False
+
     # item.account_id = current_user.id
     # i.item_category = form.item_category.data
     # i.expired = form.expired.data
@@ -97,6 +103,11 @@ def items_modify(item_id):
 
     # return "hello world!"
     return redirect(url_for("items_index"))
+
+@app.route("/items/<item_id>/commit_changes", methods=["POST"])
+@login_required
+def items_commit_changes(item_id):
+    pass
 
 @app.route("/items/<item_id>/delete", methods=["POST"])
 # @login_required
