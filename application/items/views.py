@@ -36,8 +36,10 @@ def items_form():
     if len(c_list) == 0:
         c = Category("Ei kategoriaa")
         c.account_id = current_user.id
+        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
         db.session().add(c)
         db.session().commit()
+        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
         return render_template('items/new.html', form=form)
 
     form = ItemForm()
