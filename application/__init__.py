@@ -28,7 +28,7 @@ from application.auth import views
 from application.categories import models
 from application.categories import views
 
-from application.item_category import models
+# from application.item_category import models
 
 # kirjautuminen
 from application.auth.models import User
