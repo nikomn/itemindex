@@ -27,7 +27,7 @@ def items_show_results():
     return render_template("items/list.html", items = Item.query.filter_by(account_id=current_user.id), categories = Category.query.filter_by(account_id=current_user.id))
 
 
-@app.route("/items/new/")
+@app.route("/items/new/", methods=["GET", "POST"])
 @login_required
 def items_form():
     # return render_template("items/new.html")
