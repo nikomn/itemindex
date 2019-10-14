@@ -21,17 +21,13 @@ def items_search():
 
 @app.route("/items/search/results", methods=["GET", "POST"])
 @login_required
-# def items_show_results(category_id):
 def items_show_results():
-    # return render_template("items/list.html", items = Item.query.filter_by(account_id=current_user.id), categories = Category.query.filter_by(account_id=current_user.id).filter_by(id=category_id))
     return render_template("items/list.html", items = Item.query.filter_by(account_id=current_user.id), categories = Category.query.filter_by(account_id=current_user.id))
 
 
-@app.route("/items/new/", methods=["GET", "POST"])
+@app.route("/items/new/")
 @login_required
 def items_form():
-    # return render_template("items/new.html")
-    # return render_template("items/new.html", form = ItemForm())
     category_list = Category.query.order_by('name').filter_by(account_id=current_user.id)
     c_list = []
     for c in category_list:
@@ -39,24 +35,15 @@ def items_form():
 
     if len(c_list) == 0:
         c = Category("Ei kategoriaa")
-        # c.account_id = self.id
         c.account_id = current_user.id
         db.session().add(c)
         db.session().commit()
+        return render_template('items/new.html', form=form)
 
     form = ItemForm()
 
     form.item_category.choices = [(c.id, c.name) for c in Category.query.order_by('name').filter_by(account_id=current_user.id)]
     return render_template('items/new.html', form=form)
-    # if request.method == "POST" and not form.validate():
-    #     return render_template('items/new.html', form=form)
-    # # return render_template("items/modify.html", form = form, item = item)
-    # elif request.method == "GET":
-    #     return render_template('items/new.html', form=form)
-    # if not form.validate_on_submit():
-    #     return render_template('items/new.html', form=form)
-    #elif not form.validate() and request.method == "POST":
-        #return render_template('items/new.html', form=form)
 
 @app.route("/items/<item_id>/", methods=["POST"])
 @login_required
