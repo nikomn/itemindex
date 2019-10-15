@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
  {% block body %}
- <form method="POST" action="{{ url_for('items_modify', item_id=item.id) }}">
+ <form method="POST" action="{{ url_for('items_commit_changes', item_id=item.id) }}">
    <table>
      <tr>
  <td>

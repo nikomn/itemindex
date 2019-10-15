@@ -4,6 +4,8 @@ from application.categories.models import Category
 
 from sqlalchemy.sql import text
 
+
+
 class User(Base):
 
     __tablename__ = "account"
@@ -12,7 +14,7 @@ class User(Base):
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
 
-    tasks = db.relationship("Item", backref='account', lazy=True)
+    items = db.relationship("Item", backref='account', lazy=True)
     categorys = db.relationship("Category", backref='account', lazy=True)
 
     def __init__(self, name, username, password):

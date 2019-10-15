@@ -13,7 +13,7 @@
       <td>{{ category.name }}</td>
       <td>
         <td colspan="3">
-          <form method="POST" action="{{ url_for('categories_modify', category_id=category.id) }}">
+          <form method="GET" action="{{ url_for('categories_modify', category_id=category.id) }}">
             <input type="submit" value="Muokkaa"/>
           </form>
           <form method="POST" action="{{ url_for('categories_delete', category_id=category.id) }}">

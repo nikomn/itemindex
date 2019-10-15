@@ -5,15 +5,25 @@ from application.categories.forms import CategoryForm
 from application.items.models import Item
 from flask_login import login_required, current_user
 
+
+# GET
 @app.route("/categories", methods=["GET"])
 @login_required
 def categories_index():
     return render_template("categories/list.html", categories = Category.query.filter_by(account_id=current_user.id))
 
-@app.route("/categories/new/")
+@app.route("/categories/new/", methods=["GET"])
 @login_required
 def categories_form():
     return render_template("categories/new.html", form = CategoryForm())
+
+@app.route("/categories/<category_id>/modify/", methods=["GET"])
+@login_required
+def categories_modify(category_id):
+    category = Category.query.get(category_id)
+    form = CategoryForm()
+    form.name.data = category.name
+    return render_template("categories/modify.html", form = form, category = category)
 
 @app.route("/categories/", methods=["POST"])
 @login_required
@@ -38,28 +48,7 @@ def categories_create():
         # return "hello world!"
         return redirect(url_for("categories_index"))
 
-@app.route("/categories/<category_id>/modify", methods=["POST"])
-@login_required
-def categories_modify(category_id):
-    category = Category.query.get(category_id)
-    form = CategoryForm()
-    # form.name.value = item.name
-    # form.expired.value = item.expired
-    # form = ModifyItemForm()
-    if not form.validate():
-        # return render_template("items/modify.html", form = form, item = Item.query.get(item_id))
-        return render_template("categories/modify.html", form = form, category = category)
-    # return render_template("items/modify.html", form = form, item = Item.query.get(item_id))
 
-    # i = Item(form.name.data)
-    category.name = form.name.data
-    # item.account_id = current_user.id
-
-    # db.session().add(i)
-    db.session().commit()
-
-    # return "hello world!"
-    return redirect(url_for("categories_index"))
 
 @app.route("/categories/<category_id>/delete", methods=["POST"])
 @login_required
@@ -80,3 +69,14 @@ def categories_delete(category_id):
         #    print(c)
         # return redirect(url_for("categories_index"))
         return render_template("categories/list.html", categories = Category.query.filter_by(account_id=current_user.id), error="Kategoria on käytössä! Poista ensin kategoria esineistä, joissa sitä on käytetty!")
+
+@app.route("/categories/<category_id>/commit_changes/", methods=["POST"])
+@login_required
+def categories_commit_changes(category_id):
+
+    form = CategoryForm(request.form)
+    category = Category.query.get(category_id)
+    category.name = form.name.data
+    db.session().commit()
+
+    return redirect(url_for("categories_index"))

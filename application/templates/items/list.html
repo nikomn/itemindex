@@ -12,13 +12,13 @@
       <td>{{ item.name }}</td>
       <!-- <td>{{ item.item_category }}</td> -->
       {% for category in categories %}
-        {% if category.id == item.item_category %}
+        {% if category.id == item.category_id %}
         <td>{{ category.name }}</td>
         {% endif %}
       {% endfor %}
       <td>{{ item.expired }}</td>
       <td colspan="3">
-        <form method="POST" action="{{ url_for('items_modify', item_id=item.id) }}">
+        <form method="GET" action="{{ url_for('items_modify', item_id=item.id) }}">
           <input type="submit" value="Muokkaa"/>
         </form>
         <form method="POST" action="{{ url_for('items_delete', item_id=item.id) }}">
