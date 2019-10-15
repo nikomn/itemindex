@@ -34,28 +34,11 @@ class User(Base):
     def is_authenticated(self):
         return True
 
-    # @staticmethod
-    # def find_users_with_no_items():
-    #     stmt = text("SELECT Account.id, Account.name FROM Account"
-    #                  " LEFT JOIN Item ON Item.account_id = Account.id"
-    #                  " WHERE (Item.expired IS null OR Item.expired = 1)"
-    #                  " GROUP BY Account.id"
-    #                  " HAVING COUNT(Item.id) = 0")
-    #     res = db.engine.execute(stmt)
-    #
-    #     response = []
-    #     for row in res:
-    #         response.append({"id":row[0], "name":row[1]})
-    #
-    #     return response
-
 
     @staticmethod
-    # def find_users_with_no_items(expired=True):
     def find_users_with_no_items(expired=True):
         stmt = text("SELECT Account.id, Account.name FROM Account"
                      " LEFT JOIN Item ON Item.account_id = Account.id"
-                     # " WHERE (Item.expired IS null OR Item.expired = :done)"
                      " WHERE (Item.expired IS null OR Item.expired IS :done)"
                      " GROUP BY Account.id"
                      " HAVING COUNT(Item.id) = 0").params(done=expired)
@@ -69,11 +52,8 @@ class User(Base):
 
     @staticmethod
     def show_users_number_of_items():
-        # SELECT Account.name AS nimi, COUNT(Item.name) as esineitä FROM Account, Item WHERE Account.id = Item.account_id GROUP BY Account.name;
         stmt = text("SELECT Account.username AS nimi, COUNT(Item.name) as lkm"
                      " FROM Account, Item WHERE Account.id = Item.account_id"
-                     # " WHERE (Item.expired IS null OR Item.expired = :done)"
-                     # " WHERE Account.id = Item.account_id"
                      " GROUP BY nimi"
                      " ORDER BY lkm DESC")
         res = db.engine.execute(stmt)
@@ -87,11 +67,8 @@ class User(Base):
 
     @staticmethod
     def show_users_number_of_categories():
-        # SELECT Account.name AS nimi, COUNT(Item.name) as esineitä FROM Account, Item WHERE Account.id = Item.account_id GROUP BY Account.name;
         stmt = text("SELECT Account.username AS nimi, COUNT(Category.name) as lkm"
                      " FROM Account, Category WHERE Account.id = Category.account_id"
-                     # " WHERE (Item.expired IS null OR Item.expired = :done)"
-                     # " WHERE Account.id = Item.account_id"
                      " GROUP BY nimi"
                      " ORDER BY lkm DESC")
         res = db.engine.execute(stmt)

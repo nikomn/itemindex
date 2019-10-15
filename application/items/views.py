@@ -2,7 +2,6 @@ from application import app, db
 from flask import redirect, render_template, request, url_for
 from application.items.models import Item
 from application.categories.models import Category
-# from application.item_category.models import ItemCategory
 from application.items.forms import ItemForm, ModifyItemForm, ItemSearchForm
 from flask_login import login_required, current_user
 
@@ -97,9 +96,6 @@ def items_create():
 
     i = Item(form.name.data, form.expired.data)
     category = Category.query.get(form.item_category.data)
-    # i.item_category = category.id
-    # i.categories.append(category)
-    # i.item_category.append(category)
     i.account_id = current_user.id
     i.category_id = category.id
 
@@ -112,7 +108,6 @@ def items_create():
 @login_required
 def items_commit_changes(item_id):
     form = ItemForm(request.form)
-    # item = request.item
     item = Item.query.get(item_id)
     form.item_category.choices = [(c.id, c.name) for c in Category.query.order_by('name').filter_by(account_id=current_user.id)]
 
@@ -121,9 +116,7 @@ def items_commit_changes(item_id):
 
     item.name = form.name.data
     category = Category.query.get(form.item_category.data)
-    # item.item_category = category.id
     item.category_id = category.id
-    # item.item_category = form.item_category.data
     item.expired = form.expired.data
 
     db.session().commit()

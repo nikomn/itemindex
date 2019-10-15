@@ -12,7 +12,6 @@ def auth_login():
         return render_template("auth/loginform.html", form = LoginForm())
 
     form = LoginForm(request.form)
-    # mahdolliset validoinnit
 
     user = User.query.filter_by(username=form.username.data, password=form.password.data).first()
     if not user:
@@ -34,7 +33,6 @@ def auth_newuser():
         return render_template("auth/newuserform.html", form = NewUserForm())
 
     form = NewUserForm(request.form)
-    # mahdolliset validoinnit
 
     user = User.query.filter_by(username=form.username.data, password=form.password.data).first()
     if user:
@@ -46,6 +44,5 @@ def auth_newuser():
         db.session().add(u)
         db.session().commit()
 
-        # return "hello world!"
         login_user(u)
         return redirect(url_for("index"))

@@ -5,8 +5,6 @@ app = Flask(__name__)
 # tietokanta
 from flask_sqlalchemy import SQLAlchemy
 import os
-# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///items.db"
-# app.config["SQLALCHEMY_ECHO"] = True
 
 if os.environ.get("HEROKU"):
     app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
@@ -28,7 +26,6 @@ from application.auth import views
 from application.categories import models
 from application.categories import views
 
-# from application.item_category import models
 
 # kirjautuminen
 from application.auth.models import User

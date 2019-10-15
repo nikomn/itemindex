@@ -45,7 +45,6 @@ def categories_create():
         db.session().add(c)
         db.session().commit()
 
-        # return "hello world!"
         return redirect(url_for("categories_index"))
 
 
@@ -63,11 +62,6 @@ def categories_delete(category_id):
         db.session().commit()
         return redirect(url_for("categories_index"))
     else:
-        #print("Virhe! Kategoria on käytössä!")
-        #print("Esineet, joissa kategoriaa käytetään:")
-        #for c in i_tmp:
-        #    print(c)
-        # return redirect(url_for("categories_index"))
         return render_template("categories/list.html", categories = Category.query.filter_by(account_id=current_user.id), error="Kategoria on käytössä! Poista ensin kategoria esineistä, joissa sitä on käytetty!")
 
 @app.route("/categories/<category_id>/commit_changes/", methods=["POST"])

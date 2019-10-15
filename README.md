@@ -52,3 +52,5 @@ Sovelluksen tulevaisuudessa tehtävää jatkokehitystä ajatellen voisi olla hyv
 - Useamman kuin yhden kategorian määrittäminen esineelle
 - Ulkoasun parantelu, mm. esine-listauksen sarakeleveyksien osalta yms.
 - Toteutumattomien käyttötapausten lisääminen sovellukseen
+- Kattavammat oikeuksien tarkistukset ja validoinnit syötteille
+- Salasanojen salaaminen tietokannassa
