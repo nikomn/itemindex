@@ -53,7 +53,7 @@ def categories_create():
 @app.route("/categories/<category_id>/delete", methods=["POST"])
 @login_required
 def categories_delete(category_id):
-    items = Item.query.filter_by(item_category=category_id)
+    items = Item.query.filter_by(category_id=category_id)
     i_tmp = []
     for i in items:
         i_tmp.append(i)
