@@ -2,21 +2,55 @@
 
 {% block body %}
 <p>
-  Itemindex - Esineiden ja tavaralistojen hallinnointiin tarkoitettu sovellus.
+  <h1>Itemindex</h1>
+  <b>Esineiden ja tavaralistojen hallinnointiin tarkoitettu sovellus.</b>
 </p>
 
-{% if needs_items is defined %}
+{% if needs_items is defined and needs_items %}
 <p>
-  Tietokannassa on seuraavat käyttäjät, joilla ei ole lainkaan esineitä
+  <b>Tietokannassa on seuraavat käyttäjät, joilla ei ole lainkaan esineitä</b>
 </p>
 
 <ul>
   {% for user in needs_items %}
   <li>
-    {{user.id}} {{user.name}}
+    {{user.name}}
   </li>
   {% endfor %}
 </ul>
+
+{% endif %}
+
+<p>
+  <h2>Tilastoja</h2>
+</p>
+
+{% if users_items is defined %}
+
+<p>
+  <h3>Esineiden määrät</h3>
+</p>
+<ol>
+  {% for user in users_items %}
+  <li>
+    Käyttäjä {{user.name}}: {{user.lkm}} esinettä
+  </li>
+  {% endfor %}
+</ol>
+
+{% endif %}
+{% if users_items is defined %}
+
+<p>
+  <h3>Kategorieoiden määrät</h3>
+</p>
+<ol>
+  {% for user in users_categories %}
+  <li>
+    Käyttäjä {{user.name}}: {{user.lkm}} esinettä
+  </li>
+  {% endfor %}
+</ol>
 
 {% endif %}
 

@@ -66,3 +66,39 @@ class User(Base):
             response.append({"id":row[0], "name":row[1]})
 
         return response
+
+    @staticmethod
+    def show_users_number_of_items():
+        # SELECT Account.name AS nimi, COUNT(Item.name) as esineitä FROM Account, Item WHERE Account.id = Item.account_id GROUP BY Account.name;
+        stmt = text("SELECT Account.username AS nimi, COUNT(Item.name) as lkm"
+                     " FROM Account, Item WHERE Account.id = Item.account_id"
+                     # " WHERE (Item.expired IS null OR Item.expired = :done)"
+                     # " WHERE Account.id = Item.account_id"
+                     " GROUP BY nimi"
+                     " ORDER BY lkm DESC")
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            print(row)
+            response.append({"name":row[0], "lkm":row[1]})
+
+        return response
+
+    @staticmethod
+    def show_users_number_of_categories():
+        # SELECT Account.name AS nimi, COUNT(Item.name) as esineitä FROM Account, Item WHERE Account.id = Item.account_id GROUP BY Account.name;
+        stmt = text("SELECT Account.username AS nimi, COUNT(Category.name) as lkm"
+                     " FROM Account, Category WHERE Account.id = Category.account_id"
+                     # " WHERE (Item.expired IS null OR Item.expired = :done)"
+                     # " WHERE Account.id = Item.account_id"
+                     " GROUP BY nimi"
+                     " ORDER BY lkm DESC")
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            print(row)
+            response.append({"name":row[0], "lkm":row[1]})
+
+        return response

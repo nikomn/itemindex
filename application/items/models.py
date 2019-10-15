@@ -1,10 +1,10 @@
 from application import db
 from application.models import Base
 
-item_category = db.Table('item_category',
-    db.Column('item_id', db.Integer, db.ForeignKey('item.id'), primary_key=True),
-    db.Column('category_id', db.Integer, db.ForeignKey('category.id'), primary_key=True)
-)
+# item_category = db.Table('item_category',
+#     db.Column('item_id', db.Integer, db.ForeignKey('item.id'), primary_key=True),
+#     db.Column('category_id', db.Integer, db.ForeignKey('category.id'), primary_key=True)
+# )
 
 class Item(Base):
 
