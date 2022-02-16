@@ -36,10 +36,6 @@ Lisää kuvauksia toiminnallisuuksista löytyy myös [käyttötapauskuvauksista]
 
 [SQL kyselyt](./documentation/sql_kyselyt.md)
 
-## Demosovellus herokussa
-
-[https://itemindex-demo.herokuapp.com/](https://itemindex-demo.herokuapp.com/)
-
 
 ## Tietokantakaavio
 
